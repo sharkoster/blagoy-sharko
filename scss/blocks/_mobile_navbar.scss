@@ -1,0 +1,78 @@
+
+@media screen and (min-width: 321px) {
+  .mobile_navbar {display: none !important;}
+}
+
+/* xs-размер  до 320 px */
+
+@media screen and (max-width: 320px) {
+
+  .mobile_navbar {
+    position: relative;
+    padding-top: 16%;
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+    }
+  &-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &__elemnts {
+      display: flex;
+      flex-direction: row;
+      li {
+        flex-grow: 1;
+        position: relative;
+        list-style-type: none;
+        &  a {
+          display: block;
+          padding-top: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #f0f1f6 url(../img/mobile-burger.png) center no-repeat;
+          @include transition($default-transition);
+          &:hover, &:focus {
+            background-color: #3eade2;
+          }
+        }
+        &:before {
+          display: block;
+          content: "";
+          width: 100%;
+        }
+        &:nth-child(2) a {
+          background-image: url(../img/mobile-home.png);
+        }
+        &:nth-child(3) a {
+          background-image: url(../img/mobile-search.png);
+        }
+        &:nth-child(4) a {
+          background-image: url(../img/mobile-cart.png);
+        }
+        &:nth-child(5) a {
+          background-image: url(../img/mobile-profile.png);
+        }
+        &:last-child a {
+          background-image: url(../img/mobile-telephone.png);
+        }
+      }
+    }
+  }
+  }
+
+  @-moz-document url-prefix() {.mobile_navbar {height: 52px}}
+
+}
+
+

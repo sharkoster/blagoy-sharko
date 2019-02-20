@@ -1,0 +1,67 @@
+
+/*
+================================================================================
+|                                     HEADER                                   |
+================================================================================
+*/
+header{
+	background-color: $base-bg;
+	width:100%; height: auto;
+	min-width: $min-width;
+	text-align:left;	
+	order: 1;	
+    -webkit-order: 1;
+	padding-top: 30px;
+}
+
+
+
+
+
+/* стили для HD-устройств с шириной viewport, находящейся в диапазоне 1200px - 1419px */
+@media (min-width: 321px) and (max-width: 1419px) {
+  header .wrapper {
+    padding-left:15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+	
+}
+
+@media screen and (min-width: 992px){
+	
+}
+
+@media screen and (max-width: 991px) {
+	
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+
+@media screen and (max-width: 320px) {
+	header {padding-top: 0}
+	header .wrapper {
+		padding: 0;
+		.mobile_navbar {
+			order: 1;
+			-webkit-order: 1;
+		}
+		.top_navbar {
+			order: 3;
+			-webkit-order: 3;
+		}
+		.fixed_navbar {
+			order: 2;
+			-webkit-order: 2;
+		}
+		.slider-carusel {
+			order: 4;
+			-webkit-order: 4;
+		}
+	}
+}

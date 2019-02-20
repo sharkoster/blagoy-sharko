@@ -1,0 +1,687 @@
+.fixed_navbar{
+  margin: 0 60px;
+  &-container {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 15px;
+    &-cart {
+      display: inline-flex;
+      &__cart-shopping{
+        @include radius(50%);
+        background-color: $gold-color;
+        padding: 5px;
+        font-size: 13px;
+        color: #fff;
+        margin: 0 10px;
+      }
+      &__account {
+        margin-right: 15px;
+        img {
+          margin: 0 10px 0 5px;
+        }
+      }
+      &__cart a,  &__account a {
+        display: inline-flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding: 5px 6px;
+        height: 100%;
+        font-family: $custom-font-family;
+        color: $text-color;
+      }
+      &__cart a:hover,  &__account a:hover {
+        background-color: #e9e9ea;
+        color: #666;
+      }
+    }
+    &-menu {
+      * {
+        box-sizing: content-box;
+      }
+      background-color: #09c;
+      a {
+        font-size: 15px;
+        font-family: $custom-font-family;
+        color: white;
+        @include transition(all .2s ease-in-out);
+      }
+      a:hover {
+        background-color: #e9e9ea;
+        color: #666;
+      }
+      &__drop-icon {
+        display: none;
+      }
+      & > li > a, .golden-title {
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 8px 10px;
+      }
+
+      li, &__submenu {
+        border-style: solid;
+        border-color: rgba(0, 0, 0, .05);
+      }
+      &__submenu {
+        background-color: #444;
+        border: 1px solid darkgray;
+        margin: .5em;
+        padding: .5em 0;
+        display: none;
+              a:hover {
+                color: #444;
+              }
+      }
+      &__submenu li:last-child {
+        border-width: 0;
+      }
+      &__submenu li a {
+        padding: .7em 2.1em;
+      }
+      input[type="checkbox"],  ul &__drop-icon {
+      display: none;
+      }
+      li,  a {
+        position: relative;
+        display: block;
+        color: white;
+      }
+      a {
+        font-size: 15px;
+        font-family: $custom-font-family;
+        color: white;
+        @include transition(all .25s ease-in-out);
+        &:hover {
+          background-color: #e9e9ea;
+          color: #666;
+        }
+      }&  input[type="checkbox"]:checked + &__submenu {
+         display: block;
+       }
+      li &__label-icon {
+          position: absolute;
+          right: 10px;
+          top: 4px;
+        }
+      &__label-icon {
+        padding: .6em .7em;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .425);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/* =============== large style menu ======================== */
+
+@media only screen and (min-width: 321px) {
+
+
+.fixed_navbar-container-menu {
+  display: inline-flex !important;
+      background-color: #fff;
+      & > li > a,  .golden-title {
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding: 10px 12px;
+        color: $text-color;
+      }
+      &__rotate-burger:hover img {
+        @include rotate(90deg);
+        @include transition($default-transition);
+      }
+      &__rotate-burger img {
+        margin: 0 10px 0 3px;
+        width:16px;
+        height:12px;
+      }
+      &__label-icon {
+        display: none;
+      }
+      &__submenu &__drop-icon {
+        display: inline-block !important;
+        margin-left: 10px;
+        img {
+          position: relative;
+          bottom:2px;
+        }
+      }
+      li {
+        float: left;
+        border: 0 none;
+      }
+      &__submenu {
+        background-color: #fff;
+        @include shadow(0 3px 8px rgba(0, 0, 0, .3));
+        @include radius(4px);
+        padding: 1em 0;
+        border-width: 0;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 250px;
+        z-index: 10;
+          li {
+            float: none;
+            a {
+              padding: .7em 2.1em;
+              color: $text-color;
+              &::before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                left: .6em;
+                width: 1em;
+                height: 1em;
+                background: url(../img/list-style-circle.png) center no-repeat;
+              }
+            }
+          }
+            & & {
+              top: -10px;
+              left: 101%;
+            }
+      }
+      &__submenu,
+      & input[type="checkbox"]:checked + &__submenu {
+        display: none;
+      }
+      &__drop-icon, &__label-icon {
+        position: absolute;
+        right: 20px;
+      }
+      &  li:hover > input[type="checkbox"] + &__submenu {
+        display: block;
+      }
+  }
+  .golden-title {
+    color: $gold-color !important;
+    padding-top: 0!important;
+  }
+}
+
+
+
+/*   Основной блок респонзитивности  */
+
+/* стили для HD-устройств с шириной viewport, находящейся в диапазоне 1200px - 1419px */
+@media (min-width: 1200px) and (max-width: 1419px) {
+
+  .fixed_navbar-container {
+    padding: 10px 0 10px 5px;
+  &-cart {
+
+    &__cart-shopping{
+
+    }
+    &__account {
+
+      img {
+
+      }
+    }
+    &__cart a,  &__account a {
+      font-size: 14px;
+    }
+    &__cart a:hover,  &__account a:hover {
+
+    }
+  }
+
+  &-menu {
+
+    & > li > a,  .golden-title {
+      font-size: 14px;
+      padding: 10px 10px 1px 15px;
+      margin-left: 5px;
+    }
+    &__rotate-burger:hover img {
+
+    }
+    &__rotate-burger img {
+
+    }
+    &__label-icon {
+
+    }
+    &__submenu &__drop-icon {
+
+      img {
+
+      }
+    }
+    li {
+
+    }
+    &__submenu {
+
+      li {
+
+        a {
+
+          &::before {
+
+          }
+        }
+      }
+      & & {
+
+      }
+    }
+    &__submenu,
+    & input[type="checkbox"]:checked + &__submenu {
+
+    }
+    &__drop-icon, &__label-icon {
+
+    }
+    &  li:hover > input[type="checkbox"] + &__submenu {
+
+    }
+  }
+  }
+}  // End (min-width: 1200px) and (max-width: 1419px)
+
+
+/* стили для md-устройств с шириной viewport, находящейся в диапазоне 992px - 1199px */
+@media (min-width: 991px) and (max-width: 1199px) {
+
+  .fixed_navbar {
+    margin: 0 30px;
+    .fixed_navbar-container {
+      padding:0;
+      &-cart {
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        &__cart-shopping{
+
+        }
+        &__account {
+          margin-right: 0;
+          img {
+
+          }
+        }
+        &__account a {
+          padding-right: 15px;
+        }
+        &__cart a,  &__account a {
+
+        }
+
+
+        &__cart a:hover,  &__account a:hover {
+
+        }
+      }
+
+      &-menu {
+        width:100%;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #cccccc;
+        height: 50px;
+        & > li > a,  .golden-title {
+
+        }
+        &__rotate-burger:hover img {
+
+        }
+        &__rotate-burger img {
+
+        }
+        &__label-icon {
+
+        }
+        &__submenu &__drop-icon {
+
+          img {
+
+          }
+        }
+        li {
+
+        }
+        &__submenu {
+
+          li {
+
+            a {
+
+              &::before {
+
+              }
+            }
+          }
+          & & {
+
+          }
+        }
+        &__submenu,
+        & input[type="checkbox"]:checked + &__submenu {
+
+        }
+        &__drop-icon, &__label-icon {
+
+        }
+        &  li:hover > input[type="checkbox"] + &__submenu {
+
+        }
+      }
+    }
+  }
+}  // End (min-width: 991px) and (max-width: 1199px)
+
+/* стили для sm-устройств с шириной viewport, находящейся в диапазоне 768px - 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .fixed_navbar {
+    margin: 0px;
+    .fixed_navbar-container {
+      padding: 0;
+      &-cart {
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        &__cart-shopping {
+
+        }
+        &__account {
+          margin-right: 10px;
+          img {
+
+          }
+        }
+        &__cart a {
+          font-size: 14px;
+          b {
+            font-size: 15px;
+            margin-left: 5px;
+          }
+        }
+        &__account a {
+          font-size: 13px;
+        }
+        &__cart a:hover, &__account a:hover {
+
+        }
+      }
+
+      &-menu {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #cccccc;
+        height: 50px;
+        padding-right: 10px;
+        & > li > a {
+          font-size: 14px;
+          padding: 8px 4px;
+        }
+        &__rotate-burger:hover img {
+
+        }
+        &__rotate-burger img {
+          position: relative;
+          top: 3px;
+        }
+        &__label-icon {
+
+        }
+        &__submenu &__drop-icon {
+
+          img {
+
+          }
+        }
+        li {
+
+        }
+        &__submenu {
+
+          li {
+
+            a {
+
+              &::before {
+
+              }
+            }
+          }
+          & & {
+
+          }
+        }
+        &__submenu,
+        & input[type="checkbox"]:checked + &__submenu {
+
+        }
+        &__drop-icon, &__label-icon {
+
+        }
+        & li:hover > input[type="checkbox"] + &__submenu {
+
+        }
+      }
+    }
+  }
+  .golden-title {
+    font-size: 14px;
+  }
+}  // End (min-width: 768px) and (max-width: 991px)
+
+
+/* стили для xs-устройств с шириной viewport менее 768  до 575px*/
+@media (min-width: 321px) and (max-width: 767px) {
+
+  .fixed_navbar{
+    margin:0;
+  &-container {
+    padding:0;
+    &-cart {
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      &__cart-shopping{
+
+      }
+      &__account {
+
+        img {
+
+        }
+      }
+      &__cart a{
+        font-size: 13px;
+        b{
+          font-size: 15px;
+          margin-left: 5px;
+        }
+      }
+      &__account a {
+        font-size: 13px;
+      }
+      &__cart a:hover,  &__account a:hover {
+
+      }
+    }
+
+    &-menu {
+      width:100%;
+      align-items: center;
+      justify-content: space-around;
+      border-top: 1px solid #cccccc;
+      flex-wrap: wrap;
+      height: auto;
+      & > li > a,  .golden-title {
+        font-size: 13px;
+        padding: 8px 4px;
+      }
+      &__rotate-burger:hover img {
+
+      }
+      &__rotate-burger img {
+        position: relative;
+        top:3px;
+      }
+      &__label-icon {
+
+      }
+      &__submenu &__drop-icon {
+
+        img {
+
+        }
+      }
+      li {
+
+      }
+      &__submenu {
+        width: 210px;
+        li {
+
+          a {
+            font-size: 12px;
+            font-weight: bold;
+
+            &::before {
+
+            }
+          }
+        }
+        & & {
+
+        }
+      }
+      &__submenu,
+      & input[type="checkbox"]:checked + &__submenu {
+
+      }
+      &__drop-icon, &__label-icon {
+
+      }
+      &  li:hover > input[type="checkbox"] + &__submenu {
+
+      }
+    }
+  }
+  }
+
+  .golden-title {
+    padding-left: 15px !important;
+  }
+
+} // END (min-width: 321px) and (max-width: 767px)
+
+
+/* xs-размер  до 320 px */
+
+@media screen and (max-width: 320px) {
+
+  .fixed_navbar{
+    margin: 0;
+    &-container {
+      display: table;
+      border: 0 none;
+      width: 100%;
+      padding: 0;
+      &-cart {
+        display: none !important;
+
+        &__cart-shopping{
+
+        }
+        &__account {
+
+          img {
+
+          }
+        }
+        &__cart a{
+
+          b{
+
+          }
+        }
+        &__account a {
+
+        }
+        &__cart a:hover,  &__account a:hover {
+
+        }
+      }
+
+      &-menu {
+
+        & > li > a,  .golden-title {
+
+        }
+        &__rotate-burger:hover img {
+
+        }
+        &__rotate-burger img {
+          display: none;
+        }
+        &__label-icon {
+
+        }
+        &__submenu &__drop-icon {
+
+          img {
+
+          }
+        }
+        li {
+
+        }
+        &__submenu {
+          width: auto;
+          li {
+
+            a {
+
+
+              &::before {
+
+              }
+            }
+          }
+          & & {
+            background-color: darkblue;
+          }
+        }
+        &__submenu,
+        & input[type="checkbox"]:checked + &__submenu {
+
+        }
+        &__drop-icon, &__label-icon {
+
+          img {
+            display: block;
+          }
+
+        }
+        &  li:hover > input[type="checkbox"] + &__submenu {
+
+        }
+      }
+    }
+  }
+  .golden-title {
+    color: $gold-color;
+  }
+}
